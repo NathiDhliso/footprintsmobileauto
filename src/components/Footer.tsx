@@ -47,12 +47,34 @@ export default function Footer() {
 
           <div>
             <h3 className="font-bold text-lg mb-4 text-amber-400">Our Location</h3>
-            <div className="flex items-start gap-2 text-slate-300">
+            <div className="flex items-start gap-2 text-slate-300 mb-4">
               <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
               <div className="text-sm leading-relaxed">
                 57 Regent St, Yeoville, Johannesburg, 2198
               </div>
             </div>
+            {/* Google Maps Embed */}
+            <div className="mt-4 rounded-lg overflow-hidden border border-slate-700">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.088!2d28.065833!3d-26.177778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDEwJzQwLjAiUyAyOMKwMDMnNTciRQ!5e0!3m2!1sen!2sza!4v1234567890"
+                width="100%"
+                height="200"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Footprints Mobile Auto - 57 Regent St, Yeoville, Johannesburg"
+              ></iframe>
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=57+Regent+St+Yeoville+Johannesburg+2198"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 text-sm mt-3 transition-colors"
+            >
+              <MapPin className="w-4 h-4" />
+              <span>Open in Google Maps</span>
+            </a>
           </div>
         </div>
 

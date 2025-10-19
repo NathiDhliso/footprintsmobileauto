@@ -38,8 +38,18 @@ export default function AboutGallery() {
       }
     };
 
+    // Prevent body scroll when modal is open
+    if (selectedImageIndex !== null) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
+    };
   }, [selectedImageIndex]);
 
   return (
@@ -73,23 +83,23 @@ export default function AboutGallery() {
 
       {selectedImageIndex !== null && (
         <div
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4 overflow-y-auto"
           onClick={() => setSelectedImageIndex(null)}
           role="dialog"
           aria-modal="true"
         >
           <div
-            className="relative bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] flex flex-col"
+            className="relative bg-white rounded-lg shadow-xl max-w-4xl w-full my-auto flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             <img
               src={galleryImages[selectedImageIndex].src}
               alt={galleryImages[selectedImageIndex].alt}
-              className="w-full h-auto object-contain rounded-t-lg"
+              className="w-full h-auto max-h-[70vh] object-contain rounded-t-lg"
             />
-            <p className="text-center text-sm sm:text-base p-4 text-slate-800 bg-slate-50">{galleryImages[selectedImageIndex].alt}</p>
+            <p className="text-center text-sm sm:text-base p-4 text-slate-800 bg-slate-50 rounded-b-lg">{galleryImages[selectedImageIndex].alt}</p>
             <button
-              className="absolute top-2 right-2 p-2 bg-black/50 text-white rounded-full hover:bg-black/75"
+              className="absolute top-2 right-2 p-2 bg-black/50 text-white rounded-full hover:bg-black/75 transition-colors"
               onClick={() => setSelectedImageIndex(null)}
               aria-label="Close image viewer"
             >
