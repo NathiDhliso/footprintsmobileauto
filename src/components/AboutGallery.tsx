@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { createPortal } from 'react-dom';
+import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 
 const galleryImages = [
   { src: '/IMG-20251019-WA0010.jpg', alt: 'Auto electrician working on a Hummer H3 in Johannesburg' },
@@ -24,21 +25,42 @@ const galleryImages = [
 
 export default function AboutGallery() {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const openImage = (index: number) => {
+    setSelectedImageIndex(index);
+    setImageLoaded(false);
+  };
+
+  const closeModal = () => {
+    setSelectedImageIndex(null);
+    setImageLoaded(false);
+  };
+
+  const navigateImage = (direction: 'next' | 'prev') => {
+    if (selectedImageIndex === null) return;
+    
+    setImageLoaded(false);
+    if (direction === 'next') {
+      setSelectedImageIndex((selectedImageIndex + 1) % galleryImages.length);
+    } else {
+      setSelectedImageIndex((selectedImageIndex - 1 + galleryImages.length) % galleryImages.length);
+    }
+  };
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (selectedImageIndex === null) return;
 
       if (event.key === 'Escape') {
-        setSelectedImageIndex(null);
+        closeModal();
       } else if (event.key === 'ArrowRight') {
-        setSelectedImageIndex((prev) => (prev! + 1) % galleryImages.length);
+        navigateImage('next');
       } else if (event.key === 'ArrowLeft') {
-        setSelectedImageIndex((prev) => (prev! - 1 + galleryImages.length) % galleryImages.length);
+        navigateImage('prev');
       }
     };
 
-    // Prevent body scroll when modal is open
     if (selectedImageIndex !== null) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -53,61 +75,172 @@ export default function AboutGallery() {
   }, [selectedImageIndex]);
 
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden">
-      <div className="bg-gradient-to-br from-slate-900 to-slate-800 p-6 text-white">
-        <h3 className="text-2xl font-bold">Our Work Gallery</h3>
-        <p className="text-slate-300 mt-2">Professional results you can trust</p>
-      </div>
-      <div className="p-6">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" role="grid">
-          {galleryImages.map((image, idx) => (
-            <button
-              key={image.src}
-              className="aspect-square bg-slate-200 rounded-lg overflow-hidden outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 transition-transform hover:scale-105"
-              onClick={() => setSelectedImageIndex(idx)}
-              aria-label={`View image: ${image.alt}`}
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </button>
-          ))}
+    <>
+      <div className="bg-white rounded-xl shadow-md overflow-hidden">
+        <div className="bg-gradient-to-br from-slate-900 to-slate-800 p-6 text-white">
+          <h3 className="text-2xl font-bold">Our Work Gallery</h3>
+          <p className="text-slate-300 mt-2">Professional results you can trust</p>
         </div>
-        <p className="text-sm text-slate-600 mt-4 text-center italic">
-          Serving cars, bakkies, and machinery across Gauteng with pride.
-        </p>
+        
+        <div className="p-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3" role="grid">
+            {galleryImages.map((image, idx) => (
+              <button
+                key={image.src}
+                className="group relative aspect-square bg-slate-200 rounded-lg overflow-hidden outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 transition-all duration-300 hover:shadow-lg"
+                onClick={() => openImage(idx)}
+                aria-label={`View image: ${image.alt}`}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                  <ZoomIn className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" size={32} />
+                </div>
+              </button>
+            ))}
+          </div>
+          
+          <p className="text-sm text-slate-600 mt-6 text-center italic">
+            Serving cars, bakkies, and machinery across Gauteng with pride.
+          </p>
+        </div>
+
+        <style>{`
+          @keyframes fade-in {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+
+          @keyframes scale-in {
+            from {
+              opacity: 0;
+              transform: scale(0.95);
+            }
+            to {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+
+          .animate-fade-in {
+            animation: fade-in 0.2s ease-out;
+          }
+
+          .animate-scale-in {
+            animation: scale-in 0.3s ease-out;
+          }
+        `}</style>
       </div>
 
-      {selectedImageIndex !== null && (
+      {selectedImageIndex !== null && createPortal(
         <div
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4 overflow-y-auto"
-          onClick={() => setSelectedImageIndex(null)}
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 overflow-y-auto animate-fade-in"
+          onClick={closeModal}
           role="dialog"
           aria-modal="true"
         >
           <div
-            className="relative bg-white rounded-lg shadow-xl max-w-4xl w-full my-auto flex flex-col"
+            className="relative bg-white rounded-lg shadow-2xl max-w-6xl w-full my-auto animate-scale-in"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={galleryImages[selectedImageIndex].src}
-              alt={galleryImages[selectedImageIndex].alt}
-              className="w-full h-auto max-h-[70vh] object-contain rounded-t-lg"
-            />
-            <p className="text-center text-sm sm:text-base p-4 text-slate-800 bg-slate-50 rounded-b-lg">{galleryImages[selectedImageIndex].alt}</p>
+            {/* Close Button */}
             <button
-              className="absolute top-2 right-2 p-2 bg-black/50 text-white rounded-full hover:bg-black/75 transition-colors"
-              onClick={() => setSelectedImageIndex(null)}
+              className="absolute top-4 right-4 z-20 p-2 bg-black/70 text-white rounded-full hover:bg-black transition-all hover:scale-110"
+              onClick={closeModal}
               aria-label="Close image viewer"
             >
               <X size={24} />
             </button>
+
+            {/* Navigation Buttons */}
+            <button
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 bg-black/70 text-white rounded-full hover:bg-black transition-all hover:scale-110 hidden sm:block"
+              onClick={(e) => {
+                e.stopPropagation();
+                navigateImage('prev');
+              }}
+              aria-label="Previous image"
+            >
+              <ChevronLeft size={28} />
+            </button>
+
+            <button
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 bg-black/70 text-white rounded-full hover:bg-black transition-all hover:scale-110 hidden sm:block"
+              onClick={(e) => {
+                e.stopPropagation();
+                navigateImage('next');
+              }}
+              aria-label="Next image"
+            >
+              <ChevronRight size={28} />
+            </button>
+
+            {/* Image Container */}
+            <div className="relative bg-slate-100">
+              {!imageLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-12 h-12 border-4 border-slate-300 border-t-amber-500 rounded-full animate-spin"></div>
+                </div>
+              )}
+              <img
+                src={galleryImages[selectedImageIndex].src}
+                alt={galleryImages[selectedImageIndex].alt}
+                className={`w-full h-auto max-h-[70vh] object-contain transition-opacity duration-300 ${
+                  imageLoaded ? 'opacity-100' : 'opacity-0'
+                }`}
+                onLoad={() => setImageLoaded(true)}
+              />
+            </div>
+
+            {/* Image Info */}
+            <div className="p-4 sm:p-6 bg-white border-t border-slate-200">
+              <p className="text-center text-sm sm:text-base text-slate-700 font-medium">
+                {galleryImages[selectedImageIndex].alt}
+              </p>
+              <div className="flex flex-wrap gap-3 justify-center items-center mt-4 text-xs text-slate-500">
+                <span className="bg-slate-100 px-3 py-1 rounded-full">
+                  Image {selectedImageIndex + 1} of {galleryImages.length}
+                </span>
+                <span className="hidden sm:inline">•</span>
+                <span className="hidden sm:inline">Use arrow keys to navigate</span>
+              </div>
+
+              {/* Mobile Navigation */}
+              <div className="flex gap-3 justify-center mt-4 sm:hidden">
+                <button
+                  className="flex items-center gap-2 px-4 py-2 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition-colors"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigateImage('prev');
+                  }}
+                >
+                  <ChevronLeft size={20} />
+                  Previous
+                </button>
+                <button
+                  className="flex items-center gap-2 px-4 py-2 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition-colors"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigateImage('next');
+                  }}
+                >
+                  Next
+                  <ChevronRight size={20} />
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
-    </div>
+    </>
   );
 }
