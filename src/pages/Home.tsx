@@ -1,4 +1,4 @@
-import { MessageCircle, Mail, Star, Wrench, Battery, Zap, MapPin } from 'lucide-react';
+import { MessageCircle, Mail, Star, Wrench, Battery, MapPin } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function Home() {
@@ -14,9 +14,9 @@ export default function Home() {
           <img 
             src="/herofp.png" 
             alt="Mobile Auto Electrician in Johannesburg" 
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-40"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-800/85 to-slate-900/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/75 to-slate-900/80"></div>
         </div>
 
         {/* Animated Footprint Trail */}
@@ -87,11 +87,11 @@ export default function Home() {
 
             <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-300">
               <div className="flex items-center gap-2">
-                <Zap className="w-5 h-5 text-amber-400" />
+                <img src="/logofp.png" alt="Fast Response" className="w-5 h-5" />
                 <span>Fast Response</span>
               </div>
               <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-amber-400" />
+                <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
                 <span>5-Star Rated</span>
               </div>
               <div className="flex items-center gap-2">
@@ -166,7 +166,7 @@ export default function Home() {
             <div className="grid md:grid-cols-4 gap-6">
               <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
                 <div className="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
-                  <Zap className="w-8 h-8 text-amber-600" />
+                  <img src="/logofp.png" alt="Vehicle Diagnostics" className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold text-center mb-3 text-slate-900">Vehicle Diagnostics</h3>
                 <p className="text-slate-600 text-center leading-relaxed">
@@ -196,7 +196,7 @@ export default function Home() {
 
               <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
                 <div className="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
-                  <Zap className="w-8 h-8 text-amber-600" />
+                  <img src="/logofp.png" alt="Wiring Repairs" className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold text-center mb-3 text-slate-900">Wiring Repairs</h3>
                 <p className="text-slate-600 text-center leading-relaxed">
