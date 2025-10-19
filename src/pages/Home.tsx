@@ -15,6 +15,8 @@ export default function Home() {
             src="/herofp.png" 
             alt="Mobile Auto Electrician in Johannesburg" 
             className="w-full h-full object-cover opacity-40"
+            fetchpriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/75 to-slate-900/80"></div>
         </div>
@@ -27,6 +29,8 @@ export default function Home() {
                 key={i}
                 src="/logofp.png" 
                 alt=""
+                loading="lazy"
+                decoding="async"
                 className="footprint-step"
                 style={{
                   left: `${10 + i * 12}%`,
@@ -53,6 +57,10 @@ export default function Home() {
                   src="/logofp.png" 
                   alt="Footprints Mobile Auto Logo" 
                   className="w-32 h-32 md:w-40 md:h-40 mx-auto drop-shadow-2xl animate-float"
+                  width="160"
+                  height="160"
+                  fetchpriority="high"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-amber-400/20 rounded-full blur-3xl animate-pulse"></div>
               </div>

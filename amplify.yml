@@ -1,0 +1,49 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+  customHeaders:
+    - pattern: '**/*.js'
+      headers:
+        - key: 'Content-Type'
+          value: 'application/javascript; charset=utf-8'
+    - pattern: '**/*.mjs'
+      headers:
+        - key: 'Content-Type'
+          value: 'application/javascript; charset=utf-8'
+    - pattern: '**/*.css'
+      headers:
+        - key: 'Content-Type'
+          value: 'text/css; charset=utf-8'
+    - pattern: '**/*.png'
+      headers:
+        - key: 'Cache-Control'
+          value: 'public, max-age=31536000, immutable'
+    - pattern: '**/*.jpg'
+      headers:
+        - key: 'Cache-Control'
+          value: 'public, max-age=31536000, immutable'
+    - pattern: '**/*.jpeg'
+      headers:
+        - key: 'Cache-Control'
+          value: 'public, max-age=31536000, immutable'
+    - pattern: '/logofp.png'
+      headers:
+        - key: 'Cache-Control'
+          value: 'public, max-age=31536000, immutable'
+    - pattern: '/herofp.png'
+      headers:
+        - key: 'Cache-Control'
+          value: 'public, max-age=31536000, immutable'
