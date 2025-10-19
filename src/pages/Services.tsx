@@ -1,4 +1,4 @@
-import { Zap, Battery, Wrench, Search, AlertCircle, Radio, Gauge, Power, MapPin } from 'lucide-react';
+import { Battery, Wrench, Search, AlertCircle, Radio, Gauge, Power, MapPin } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function Services() {
@@ -13,8 +13,11 @@ export default function Services() {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Our Complete Auto Electrical Services in Gauteng
             </h1>
-            <p className="text-xl text-slate-300 leading-relaxed">
+            <p className="text-xl text-slate-300 leading-relaxed mb-3">
               Professional mobile car electrician services delivered to your location
+            </p>
+            <p className="text-base text-slate-400 italic">
+              Op-perseel herstelwerk • Ukulungisa imoto ekhaya
             </p>
           </div>
         </div>
@@ -123,7 +126,7 @@ export default function Services() {
                   <div className="flex gap-4">
                     <div className="flex-shrink-0">
                       <div className="bg-amber-100 rounded-lg p-3">
-                        <Zap className="w-6 h-6 text-amber-600" />
+                        <img src="/logofp.png" alt="" className="w-6 h-6" />
                       </div>
                     </div>
                     <div>

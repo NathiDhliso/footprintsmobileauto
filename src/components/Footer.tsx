@@ -1,4 +1,4 @@
-import { Zap, Mail, MessageCircle, MapPin, Phone } from 'lucide-react';
+import { Mail, MessageCircle, MapPin, Phone } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Zap className="w-6 h-6 text-amber-400" />
+              <img src="/logofp.png" alt="Footprints Mobile Auto" className="w-6 h-6" />
               <span className="font-bold text-lg">Footprints Mobile Auto</span>
             </div>
             <p className="text-slate-300 text-sm leading-relaxed">

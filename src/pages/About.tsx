@@ -1,4 +1,4 @@
-import { Heart, Users, Award, Zap, HelpCircle, Battery, AlertTriangle, Power, Wrench } from 'lucide-react';
+import { Heart, Users, Award, HelpCircle, Battery, AlertTriangle, Power, Wrench } from 'lucide-react';
 import AboutGallery from '../components/AboutGallery';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
@@ -68,7 +68,7 @@ export default function About() {
               </div>
 
               <div className="bg-slate-50 rounded-xl p-6 text-center border border-slate-200">
-                <Zap className="w-12 h-12 text-amber-600 mx-auto mb-4" />
+                <img src="/logofp.png" alt="Fast Response" className="w-12 h-12 mx-auto mb-4" />
                 <h3 className="font-bold text-lg text-slate-900 mb-2">Fast Response</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   Quick turnaround to get you back on the road
@@ -95,7 +95,7 @@ export default function About() {
               <div className="bg-white rounded-xl shadow-md p-8 border-l-4 border-amber-600">
                 <h3 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
                   <Battery className="w-6 h-6 text-amber-600" />
-                  Why is my car battery flat?
+                  Why is my car battery flat? / Hoekom is my battery pap? / Kungani ibhethri lifile?
                 </h3>
                 <p className="text-slate-700 leading-relaxed">
                   Car batteries can go flat for several reasons: leaving lights on, a faulty alternator
@@ -103,18 +103,26 @@ export default function About() {
                   electrical drains from accessories, or extreme weather conditions. We can quickly test
                   your battery and charging system to identify the exact cause and provide the right solution.
                 </p>
+                <p className="text-slate-600 text-sm mt-3 italic">
+                  Ons toets jou battery en laai-stelsel om die presiese oorsaak te vind. • 
+                  Sizohlola ibhethri lakho futhi sithole inkinga.
+                </p>
               </div>
 
               <div className="bg-white rounded-xl shadow-md p-8 border-l-4 border-amber-600">
                 <h3 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
                   <AlertTriangle className="w-6 h-6 text-amber-600" />
-                  Car won't start - what could be wrong?
+                  Car won't start - what could be wrong? / My kar start nie / Imoto ayiqali
                 </h3>
                 <p className="text-slate-700 leading-relaxed">
                   A car that won't start can have multiple causes: dead or weak battery, faulty starter
                   motor, ignition switch problems, fuel system issues, or security system malfunctions.
                   Our mobile diagnostic service will pinpoint the issue at your location, and in most cases,
                   we can fix it on the spot without needing to tow your vehicle.
+                </p>
+                <p className="text-slate-600 text-sm mt-3 italic">
+                  Ons mobiele diagnostiek sal die fout vind en dit reg op die plek maak. • 
+                  Sizothola inkinga futhi silungise lapho ukhona.
                 </p>
               </div>
 
@@ -146,7 +154,7 @@ export default function About() {
 
               <div className="bg-white rounded-xl shadow-md p-8 border-l-4 border-amber-600">
                 <h3 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
-                  <Zap className="w-6 h-6 text-amber-600" />
+                  <img src="/logofp.png" alt="" className="w-6 h-6" />
                   Can you fix electrical wiring problems?
                 </h3>
                 <p className="text-slate-700 leading-relaxed">

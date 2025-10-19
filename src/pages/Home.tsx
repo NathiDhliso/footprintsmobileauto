@@ -61,10 +61,16 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
               Mobile Auto Electrician in <span className="text-amber-400">Johannesburg & Gauteng</span>
             </h1>
-            <h2 className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed drop-shadow-md">
+            <h2 className="text-xl md:text-2xl text-slate-300 mb-4 leading-relaxed drop-shadow-md">
               Expert Car Electrician services, from vehicle diagnostics to wiring repairs.
               <span className="block mt-2 text-amber-400 font-semibold">We come to you.</span>
             </h2>
+            
+            {/* Multilingual Taglines */}
+            <div className="text-base md:text-lg text-slate-400 mb-8 space-y-1">
+              <p className="italic">Ons kom na jou toe vir kar diagnostiek en herstelwerk</p>
+              <p className="italic">Siyeza kuwe eGoli • Silungisa ugesi wemoto</p>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <a

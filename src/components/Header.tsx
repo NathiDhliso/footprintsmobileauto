@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Zap, Menu, X, Mail, MessageCircle } from 'lucide-react';
+import { Menu, X, Mail, MessageCircle } from 'lucide-react';
 
 interface HeaderProps {
   currentPage: string;
@@ -23,7 +23,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             onClick={() => handleNavigate('home')}
             className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
-            <Zap className="w-8 h-8 text-amber-400" />
+            <img src="/logofp.png" alt="Footprints Mobile Auto" className="w-8 h-8" />
             <div className="text-left">
               <div className="font-bold text-xl leading-tight">Footprints Mobile Auto</div>
               <div className="text-xs text-amber-400">Leaving a Positive Footprint</div>
