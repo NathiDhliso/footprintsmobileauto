@@ -95,7 +95,7 @@ export default function About() {
               <div className="bg-white rounded-xl shadow-md p-8 border-l-4 border-amber-600">
                 <h3 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
                   <Battery className="w-6 h-6 text-amber-600" />
-                  Why is my car battery flat? / Hoekom is my battery pap? / Kungani ibhethri lifile?
+                  Why is my car battery flat?
                 </h3>
                 <p className="text-slate-700 leading-relaxed">
                   Car batteries can go flat for several reasons: leaving lights on, a faulty alternator
@@ -104,15 +104,14 @@ export default function About() {
                   your battery and charging system to identify the exact cause and provide the right solution.
                 </p>
                 <p className="text-slate-600 text-sm mt-3 italic">
-                  Ons toets jou battery en laai-stelsel om die presiese oorsaak te vind. • 
-                  Sizohlola ibhethri lakho futhi sithole inkinga.
+                  We test your battery and charging system to find the exact cause and provide a clear plan.
                 </p>
               </div>
 
               <div className="bg-white rounded-xl shadow-md p-8 border-l-4 border-amber-600">
                 <h3 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
                   <AlertTriangle className="w-6 h-6 text-amber-600" />
-                  Car won't start - what could be wrong? / My kar start nie / Imoto ayiqali
+                  Car won't start - what could be wrong?
                 </h3>
                 <p className="text-slate-700 leading-relaxed">
                   A car that won't start can have multiple causes: dead or weak battery, faulty starter
@@ -121,8 +120,7 @@ export default function About() {
                   we can fix it on the spot without needing to tow your vehicle.
                 </p>
                 <p className="text-slate-600 text-sm mt-3 italic">
-                  Ons mobiele diagnostiek sal die fout vind en dit reg op die plek maak. • 
-                  Sizothola inkinga futhi silungise lapho ukhona.
+                  Our mobile diagnostics identify the fault and resolve it for you on-site.
                 </p>
               </div>
 
@@ -171,7 +169,7 @@ export default function About() {
                   Do you service all vehicle makes and models?
                 </h3>
                 <p className="text-slate-700 leading-relaxed">
-                  Yes! We service all makes and models of cars, bakkies, SUVs, and light commercial vehicles.
+                  Yes! We service all makes and models of cars, pickup trucks, SUVs, and light commercial vehicles.
                   Our diagnostic equipment and expertise cover European, Japanese, American, and local brands.
                   Whether you drive a VW, Toyota, BMW, Ford, or any other vehicle, we have the knowledge
                   and experience to handle your auto electrical needs.

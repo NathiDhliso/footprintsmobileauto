@@ -76,8 +76,7 @@ export default function Home() {
             
             {/* Multilingual Taglines */}
             <div className="text-base md:text-lg text-slate-400 mb-8 space-y-1">
-              <p className="italic">Ons kom na jou toe vir kar diagnostiek en herstelwerk</p>
-              <p className="italic">Siyeza kuwe eGoli • Silungisa ugesi wemoto</p>
+              <p className="italic">We come to you for car diagnostics and electrical repairs.</p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">

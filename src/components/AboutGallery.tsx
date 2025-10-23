@@ -12,7 +12,7 @@ const galleryImages = [
   { src: '/IMG-20251019-WA0009.jpg', alt: 'On-site repair of a blue BMW Z3 Coupe' },
   { src: '/IMG-20251019-WA0013.jpg', alt: 'Honda CR-V battery service in progress' },
   { src: '/IMG-20251019-WA0002.jpg', alt: 'Battery replacement for a BMW 1 Series convertible' },
-  { src: '/IMG-20251019-WA0008.jpg', alt: 'Ford F-250 bakkie electrical diagnostics' },
+  { src: '/IMG-20251019-WA0008.jpg', alt: 'Ford F-250 pickup electrical diagnostics' },
   { src: '/IMG-20251019-WA0020.jpg', alt: 'Audi Q7 receiving a battery charge and diagnostic check' },
   { src: '/IMG-20251019-WA0011.jpg', alt: 'Tail light repair on a black BMW X5' },
   { src: '/IMG-20251019-WA0018.jpg', alt: 'Mini Cooper engine bay inspection' },
@@ -105,7 +105,7 @@ export default function AboutGallery() {
           </div>
           
           <p className="text-sm text-slate-600 mt-6 text-center italic">
-            Serving cars, bakkies, and machinery across Gauteng with pride.
+            Serving cars, pickup trucks, and machinery across Gauteng with pride.
           </p>
         </div>
 

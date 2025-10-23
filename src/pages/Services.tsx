@@ -17,7 +17,7 @@ export default function Services() {
               Professional mobile car electrician services delivered to your location
             </p>
             <p className="text-base text-slate-400 italic">
-              Op-perseel herstelwerk • Ukulungisa imoto ekhaya
+              On-site repairs delivered wherever you are in Gauteng
             </p>
           </div>
         </div>
@@ -196,7 +196,7 @@ export default function Services() {
                   Specialists for All Major Vehicle Brands
                 </h2>
                 <p className="text-center text-slate-600 mb-10 max-w-2xl mx-auto">
-                  Whether you need a <span className="font-semibold text-amber-600">VW auto electrician</span>, a specialist for your BMW, or repairs on a Ford bakkie, we have the expertise for all major brands on South African roads.
+                  Whether you need a <span className="font-semibold text-amber-600">VW auto electrician</span>, a specialist for your BMW, or repairs on a Ford pickup, we have the expertise for all major brands on South African roads.
                 </p>
                 <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 mb-12">
                   <span className="font-bold text-slate-700">Toyota</span>
@@ -209,9 +209,9 @@ export default function Services() {
                 </div>
                 <div className="grid md:grid-cols-3 gap-6 text-center">
                   <div className="bg-white p-6 rounded-xl shadow-sm">
-                    <h3 className="font-bold text-lg text-slate-900 mb-2">Bakkie & LDV Services</h3>
+                    <h3 className="font-bold text-lg text-slate-900 mb-2">Pickup & LDV Services</h3>
                     <p className="text-slate-600 text-sm leading-relaxed">
-                      Expert <span className="font-semibold">Bakkie auto electrician</span> services, including complex <span className="font-semibold">Isuzu bakkie wiring</span> and Ford starter motor issues.
+                      Expert <span className="font-semibold">pickup auto electrician</span> services, including complex <span className="font-semibold">Isuzu pickup wiring</span> and Ford starter motor issues.
                     </p>
                   </div>
                   <div className="bg-white p-6 rounded-xl shadow-sm">
