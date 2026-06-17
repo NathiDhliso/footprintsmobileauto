@@ -16,7 +16,7 @@ export default function Footer() {
     <footer className="bg-mono-950 py-16 px-6 md:px-8 border-t border-mono-900">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Column 1 — Company */}
+          {/* Column 1 - Company */}
           <div>
             <div className="flex items-center gap-3 mb-6">
               <img
@@ -33,7 +33,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Column 2 — Contact */}
+          {/* Column 2 - Contact */}
           <div>
             <h3 className="font-display text-white font-bold text-xl mb-6 tracking-tight">Contact Us</h3>
             <div className="space-y-4">
@@ -42,7 +42,7 @@ export default function Footer() {
                 className="flex items-center gap-3 text-mono-300 hover:text-white transition-colors group"
               >
                 <Phone className="w-5 h-5 text-mono-400 group-hover:text-white transition-colors" />
-                <span className="font-semibold text-mono-100">📞 068 351 0676</span>
+                <span className="font-semibold text-mono-100">068 351 0676</span>
                 <span className="text-xs text-mono-500">(Primary)</span>
               </a>
               <a
@@ -50,7 +50,7 @@ export default function Footer() {
                 className="flex items-center gap-3 text-mono-300 hover:text-white transition-colors group"
               >
                 <Phone className="w-5 h-5 text-mono-400 group-hover:text-white transition-colors" />
-                <span className="font-semibold text-mono-100">📞 063 124 4992</span>
+                <span className="font-semibold text-mono-100">063 124 4992</span>
               </a>
               <a
                 href="https://wa.me/27683510676"
@@ -59,14 +59,14 @@ export default function Footer() {
                 className="flex items-center gap-3 text-mono-300 hover:text-white transition-colors group"
               >
                 <MessageCircle className="w-5 h-5 text-mono-400 group-hover:text-white transition-colors" />
-                <span className="font-semibold text-mono-100">💬 WhatsApp Us</span>
+                <span className="font-semibold text-mono-100">WhatsApp Us</span>
               </a>
               <a
                 href="mailto:footprintsmobileauto@gmail.com"
                 className="flex items-center gap-3 text-mono-300 hover:text-white transition-colors group"
               >
                 <Mail className="w-5 h-5 text-mono-400 group-hover:text-white transition-colors" />
-                <span className="text-sm">✉️ footprintsmobileauto@gmail.com</span>
+                <span className="text-sm">footprintsmobileauto@gmail.com</span>
               </a>
               <div className="flex items-center gap-3 text-mono-400">
                 <Clock className="w-5 h-5 text-mono-500" />
@@ -75,7 +75,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 3 — Service Areas */}
+          {/* Column 3 - Service Areas */}
           <div>
             <h3 className="font-display text-white font-bold text-xl mb-6 tracking-tight">Service Areas</h3>
             <ul className="grid grid-cols-2 gap-3 mb-6">

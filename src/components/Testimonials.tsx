@@ -1,12 +1,12 @@
 import { Star } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-// ===== PLACEHOLDER REVIEWS — Replace with real customer reviews =====
+// ===== PLACEHOLDER REVIEWS - Replace with real customer reviews =====
 const reviews = [
   {
     name: 'Sibusiso M.',
     rating: 5,
-    text: "My car wouldn't start in Sandton and I needed help urgently. Footprints arrived within 45 minutes and diagnosed a faulty starter motor. Fixed it on the spot — amazing service!",
+    text: "My car wouldn't start in Sandton and I needed help urgently. Footprints arrived within 45 minutes and diagnosed a faulty starter motor. Fixed it on the spot - amazing service!",
   },
   {
     name: 'Khumbelo M.',

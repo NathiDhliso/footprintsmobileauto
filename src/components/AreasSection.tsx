@@ -56,7 +56,7 @@ export default function AreasSection() {
             className="tap-target inline-flex items-center gap-3 bg-accent hover:bg-accent-dark text-mono-950 font-bold rounded-xl py-4 px-8 transition-colors text-lg"
           >
             <Phone className="w-5 h-5" />
-            <span>Call Now — 068 351 0676</span>
+            <span>Call Now - 068 351 0676</span>
           </a>
         </div>
       </div>

@@ -33,13 +33,13 @@ export default function HeroSection() {
 
         {/* Subheadline */}
         <h2 className="text-lg md:text-2xl text-mono-300 font-medium mb-6 md:mb-8 max-w-2xl mx-auto tracking-wide">
-          Mobile Auto Electrician — Johannesburg &amp; Gauteng
+          Mobile Auto Electrician - Johannesburg &amp; Gauteng
         </h2>
 
         {/* Availability Badge */}
         <div className="inline-flex items-center gap-2 bg-mono-900/80 backdrop-blur-sm text-mono-200 rounded-lg py-2 px-4 text-sm font-medium border border-mono-700 mb-8 md:mb-10">
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-          <span>Fast on-site response across Gauteng — daily 8:30am–6pm</span>
+          <span>Fast on-site response across Gauteng - daily 8:30am–6pm</span>
         </div>
 
         {/* CTA Buttons */}
@@ -49,7 +49,7 @@ export default function HeroSection() {
             className="cta-glow tap-target w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-dark text-mono-950 text-lg md:text-xl font-bold py-4 px-8 rounded-xl transition-colors"
           >
             <Phone className="w-5 h-5 md:w-6 md:h-6" />
-            <span>📞 Call Now</span>
+            <span>Call Now</span>
           </a>
           <a
             href="https://wa.me/27683510676"
@@ -58,7 +58,7 @@ export default function HeroSection() {
             className="tap-target w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-mono-900 hover:bg-mono-800 text-white font-bold text-lg md:text-xl py-4 px-8 rounded-xl border border-mono-700 transition-colors"
           >
             <MessageCircle className="w-5 h-5 md:w-6 md:h-6" />
-            <span>💬 WhatsApp Us</span>
+            <span>WhatsApp Us</span>
           </a>
         </div>
       </div>

@@ -11,7 +11,7 @@ export default function StickyCallBar() {
             className="tap-target flex-1 flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-mono-950 font-bold rounded-lg py-3 transition-colors"
           >
             <Phone className="w-5 h-5" />
-            <span>📞 Call Now</span>
+            <span>Call Now</span>
           </a>
           <a
             href="https://wa.me/27683510676"
@@ -20,7 +20,7 @@ export default function StickyCallBar() {
             className="tap-target flex-1 flex items-center justify-center gap-2 bg-mono-800 hover:bg-mono-700 text-white font-bold rounded-lg py-3 transition-colors border border-mono-700"
           >
             <MessageCircle className="w-5 h-5" />
-            <span>💬 WhatsApp</span>
+            <span>WhatsApp</span>
           </a>
         </div>
       </div>
@@ -33,7 +33,7 @@ export default function StickyCallBar() {
             className="tap-target flex items-center gap-2 bg-accent hover:bg-accent-dark text-mono-950 font-bold rounded-lg px-5 py-2 transition-colors text-sm"
           >
             <Phone className="w-4 h-4" />
-            <span>📞 Call Now — 068 351 0676</span>
+            <span>Call Now - 068 351 0676</span>
           </a>
           <a
             href="https://wa.me/27683510676"
@@ -42,7 +42,7 @@ export default function StickyCallBar() {
             className="tap-target flex items-center gap-2 bg-mono-800 hover:bg-mono-700 text-white font-bold rounded-lg px-5 py-2 transition-colors text-sm border border-mono-700"
           >
             <MessageCircle className="w-4 h-4" />
-            <span>💬 WhatsApp Us</span>
+            <span>WhatsApp Us</span>
           </a>
         </div>
       </div>

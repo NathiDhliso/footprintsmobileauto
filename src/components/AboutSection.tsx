@@ -112,8 +112,8 @@ export default function AboutSection() {
           </h2>
           <p className="text-mono-600 max-w-3xl mx-auto text-lg leading-relaxed">
             Footprints Mobile Auto is a professional mobile auto electrician service based
-            in Johannesburg, serving all of Gauteng. We come to your location — home,
-            office, or roadside — to diagnose and repair car electrical faults. No towing
+            in Johannesburg, serving all of Gauteng. We come to your location - home,
+            office, or roadside - to diagnose and repair car electrical faults. No towing
             needed, no workshop visit required.
           </p>
         </div>

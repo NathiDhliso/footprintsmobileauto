@@ -6,7 +6,7 @@ const services = [
     icon: Search,
     title: 'Car Diagnostics',
     description:
-      'Advanced computer diagnostics to pinpoint any car electrical fault. We use professional scan tools to read fault codes and identify issues fast — whether it\'s an engine warning light, sensor problem, or electrical gremlin.',
+      'Advanced computer diagnostics to pinpoint any car electrical fault. We use professional scan tools to read fault codes and identify issues fast - whether it\'s an engine warning light, sensor problem, or electrical gremlin.',
   },
   {
     icon: Battery,
@@ -18,19 +18,19 @@ const services = [
     icon: Settings,
     title: 'Starter & Alternator Repairs',
     description:
-      'Car won\'t start? It could be a faulty starter motor or failing alternator. We diagnose and repair starter motors and alternators across Johannesburg and Gauteng — on-site, same day.',
+      'Car won\'t start? It could be a faulty starter motor or failing alternator. We diagnose and repair starter motors and alternators across Johannesburg and Gauteng - on-site, same day.',
   },
   {
     icon: Cable,
     title: 'Vehicle Wiring Repairs',
     description:
-      'Faulty wiring causes all kinds of electrical problems — from dashboard lights to complete power loss. Our mobile auto electrician traces and repairs wiring faults in any vehicle make or model.',
+      'Faulty wiring causes all kinds of electrical problems - from dashboard lights to complete power loss. Our mobile auto electrician traces and repairs wiring faults in any vehicle make or model.',
   },
   {
     icon: Lightbulb,
     title: 'Lighting Solutions',
     description:
-      'Headlights, tail lights, indicators, interior lights — if it\'s not working, we\'ll fix it. We handle bulb replacements, wiring repairs, and full lighting system diagnostics across Randburg, Roodepoort, and beyond.',
+      'Headlights, tail lights, indicators, interior lights - if it\'s not working, we\'ll fix it. We handle bulb replacements, wiring repairs, and full lighting system diagnostics across Randburg, Roodepoort, and beyond.',
   },
   {
     icon: Fan,
@@ -63,7 +63,7 @@ export default function ServicesSection() {
           </h2>
           <p className="text-mono-600 max-w-3xl mx-auto text-lg leading-relaxed">
             Professional mobile auto electrician services across Johannesburg and Gauteng.
-            We diagnose and fix car electrical faults on-site — no towing needed.
+            We diagnose and fix car electrical faults on-site - no towing needed.
           </p>
         </div>
 
