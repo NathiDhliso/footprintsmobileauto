@@ -1,13 +1,36 @@
+import { useState, useEffect } from 'react';
 import { Phone, MessageCircle } from 'lucide-react';
 
 export default function HeroSection() {
+  const [isAvailableNow, setIsAvailableNow] = useState(false);
+
+  useEffect(() => {
+    const checkAvailability = () => {
+      // Get current time in SAST (UTC+2)
+      const now = new Date();
+      const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const sast = new Date(utc + (3600000 * 2));
+      
+      const hour = sast.getHours();
+      const minute = sast.getMinutes();
+      const time = hour + minute / 60;
+      
+      // Open between 8:30am (8.5) and 6:00pm (18.0)
+      setIsAvailableNow(time >= 8.5 && time < 18);
+    };
+
+    checkAvailability();
+    // Check every minute to keep it updated if the user leaves the tab open
+    const interval = setInterval(checkAvailability, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="home" className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-mono-950">
       {/* Background Image */}
       <img
         src="/herofp.png"
         alt="Mobile auto electrician servicing car in Johannesburg"
-        loading="lazy"
         className="absolute inset-0 w-full h-full object-cover img-mono"
       />
       {/* Dark Overlay */}
@@ -36,10 +59,19 @@ export default function HeroSection() {
           Mobile Auto Electrician - Johannesburg &amp; Gauteng
         </h2>
 
-        {/* Availability Badge */}
+        {/* Time-Aware Availability Badge */}
         <div className="inline-flex items-center gap-2 bg-mono-900/80 backdrop-blur-sm text-mono-200 rounded-lg py-2 px-4 text-sm font-medium border border-mono-700 mb-8 md:mb-10">
-          <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-          <span>Fast on-site response across Gauteng - daily 8:30am–6pm</span>
+          {isAvailableNow ? (
+            <>
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+              <span>Available Now - Dispatching across Gauteng today</span>
+            </>
+          ) : (
+            <>
+              <span className="w-2 h-2 rounded-full bg-mono-500"></span>
+              <span>Currently closed - leave a WhatsApp, we'll reply first thing</span>
+            </>
+          )}
         </div>
 
         {/* CTA Buttons */}
@@ -61,6 +93,11 @@ export default function HeroSection() {
             <span>WhatsApp Us</span>
           </a>
         </div>
+        
+        {/* Honest Trust Line */}
+        <p className="mt-6 text-sm md:text-base text-mono-400 font-medium">
+          Trusted local auto electrician - Johannesburg &amp; Gauteng
+        </p>
       </div>
     </section>
   );
