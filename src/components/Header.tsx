@@ -16,7 +16,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 md:top-12 z-40 bg-mono-950/95 backdrop-blur-md border-b border-mono-800">
+    <header className="sticky top-0 z-40 bg-mono-950/95 backdrop-blur-md border-b border-mono-800">
       <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 md:px-8">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
@@ -25,7 +25,7 @@ export default function Header() {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -35,13 +35,24 @@ export default function Header() {
               {link.label}
             </a>
           ))}
-          <a
-            href="tel:+27683510676"
-            className="tap-target flex items-center gap-2 bg-accent hover:bg-accent-dark text-mono-950 font-bold rounded-lg px-5 py-2 transition-colors text-sm"
-          >
-            <Phone className="w-4 h-4" />
-            Call Now
-          </a>
+          <div className="flex items-center gap-3 ml-2">
+            <a
+              href="tel:+27683510676"
+              className="tap-target flex items-center gap-2 bg-accent hover:bg-accent-dark text-mono-950 font-bold rounded-lg px-4 py-2 transition-colors text-sm"
+            >
+              <Phone className="w-4 h-4" />
+              Call Now - 068 351 0676
+            </a>
+            <a
+              href="https://wa.me/27683510676"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="tap-target flex items-center gap-2 bg-mono-800 hover:bg-mono-700 text-white font-bold rounded-lg px-4 py-2 transition-colors text-sm border border-mono-700"
+            >
+              <MessageCircle className="w-4 h-4" />
+              WhatsApp Us
+            </a>
+          </div>
         </nav>
 
         {/* Mobile Hamburger */}
