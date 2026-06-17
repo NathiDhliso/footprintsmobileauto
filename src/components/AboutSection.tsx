@@ -27,7 +27,7 @@ const faqs = [
     answer: (
       <>
         Give us a call on{' '}
-        <a href="tel:+27683510676" className="text-brand font-semibold hover:text-brand-dark transition-colors">
+        <a href="tel:+27683510676" className="text-mono-950 font-bold hover:underline transition-colors">
           068 351 0676
         </a>
         . We'll ask a few questions to understand the problem, then send our mobile auto
@@ -50,7 +50,7 @@ const faqs = [
     answer: (
       <>
         Call us for a free phone quote on{' '}
-        <a href="tel:+27683510676" className="text-brand font-semibold hover:text-brand-dark transition-colors">
+        <a href="tel:+27683510676" className="text-mono-950 font-bold hover:underline transition-colors">
           068 351 0676
         </a>
         . We'll give you an honest estimate before we come out.
@@ -68,14 +68,14 @@ function FAQItem({ question, answer }: { question: string; answer: React.ReactNo
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border border-slate-200 rounded-xl overflow-hidden">
+    <div className="border border-mono-200 rounded-xl overflow-hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between gap-4 p-5 text-left hover:bg-slate-50 transition-colors"
+        className="w-full flex items-center justify-between gap-4 p-6 text-left hover:bg-mono-50 transition-colors"
       >
-        <span className="font-semibold text-dark">{question}</span>
+        <span className="font-bold text-mono-950 tracking-tight">{question}</span>
         <ChevronDown
-          className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300 ${
+          className={`w-5 h-5 text-mono-400 flex-shrink-0 transition-transform duration-300 ${
             isOpen ? 'rotate-180' : ''
           }`}
         />
@@ -86,7 +86,7 @@ function FAQItem({ question, answer }: { question: string; answer: React.ReactNo
         }`}
       >
         <div className="overflow-hidden">
-          <div className="px-5 pb-5 text-slate-600 leading-relaxed text-sm">
+          <div className="px-6 pb-6 text-mono-600 leading-relaxed text-base">
             {answer}
           </div>
         </div>
@@ -106,11 +106,11 @@ export default function AboutSection() {
     >
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-dark mb-4">
+        <div className="text-center mb-16">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-mono-950 mb-4 tracking-tight">
             About Footprints Mobile Auto
           </h2>
-          <p className="text-slate-600 max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="text-mono-600 max-w-3xl mx-auto text-lg leading-relaxed">
             Footprints Mobile Auto is a professional mobile auto electrician service based
             in Johannesburg, serving all of Gauteng. We come to your location — home,
             office, or roadside — to diagnose and repair car electrical faults. No towing
@@ -119,24 +119,24 @@ export default function AboutSection() {
         </div>
 
         {/* Work Photos Grid */}
-        <div className="grid grid-cols-2 gap-4 mb-16">
+        <div className="grid grid-cols-2 gap-4 md:gap-6 mb-20">
           {photos.map((photo) => (
             <img
               key={photo.src}
               src={photo.src}
               alt={photo.alt}
               loading="lazy"
-              className="w-full aspect-video object-cover rounded-2xl shadow-md"
+              className="w-full aspect-video object-cover rounded-2xl border border-mono-150 img-mono"
             />
           ))}
         </div>
 
         {/* FAQ */}
         <div className="max-w-3xl mx-auto">
-          <h3 className="text-2xl font-bold text-dark text-center mb-8">
+          <h3 className="font-display text-2xl md:text-3xl font-bold text-mono-950 text-center mb-8 tracking-tight">
             Frequently Asked Questions
           </h3>
-          <div className="space-y-3">
+          <div className="space-y-4">
             {faqs.map((faq) => (
               <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
             ))}

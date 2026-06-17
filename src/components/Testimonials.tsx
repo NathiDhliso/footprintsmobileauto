@@ -22,9 +22,9 @@ const reviews = [
 
 function StarRating({ count }: { count: number }) {
   return (
-    <div className="flex gap-1 mb-3">
+    <div className="flex gap-1 mb-4">
       {Array.from({ length: count }).map((_, i) => (
-        <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
+        <Star key={i} className="w-4 h-4 fill-mono-800 text-mono-800" />
       ))}
     </div>
   );
@@ -36,12 +36,12 @@ export default function Testimonials() {
   return (
     <section
       ref={ref}
-      className={`bg-slate-50 py-16 md:py-24 px-6 fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      className={`bg-mono-50 py-16 md:py-24 px-6 fade-in-section ${isVisible ? 'is-visible' : ''}`}
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-dark mb-4">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-mono-950 mb-4 tracking-tight">
             What Our Customers Say
           </h2>
         </div>
@@ -51,10 +51,10 @@ export default function Testimonials() {
           {reviews.map((review) => (
             <div
               key={review.name}
-              className="bg-white rounded-2xl shadow-md p-6 relative"
+              className="bg-white rounded-2xl border border-mono-200 p-8 relative"
             >
               {/* Decorative Quote */}
-              <span className="absolute top-4 right-6 text-6xl font-serif text-brand/20 leading-none select-none pointer-events-none">
+              <span className="absolute top-6 right-6 text-6xl font-serif text-mono-150 leading-none select-none pointer-events-none">
                 "
               </span>
 
@@ -62,12 +62,12 @@ export default function Testimonials() {
               <StarRating count={review.rating} />
 
               {/* Review Text */}
-              <p className="text-slate-600 italic leading-relaxed mb-5 text-sm">
+              <p className="text-mono-600 leading-relaxed mb-6 text-base">
                 "{review.text}"
               </p>
 
               {/* Customer Name */}
-              <p className="font-bold text-dark">{review.name}</p>
+              <p className="font-bold text-mono-950">{review.name}</p>
             </div>
           ))}
         </div>

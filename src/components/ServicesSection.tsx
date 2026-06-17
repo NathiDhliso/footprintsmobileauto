@@ -53,15 +53,15 @@ export default function ServicesSection() {
     <section
       id="services"
       ref={ref}
-      className={`bg-slate-50 py-16 md:py-24 px-6 fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      className={`bg-mono-50 py-16 md:py-24 px-6 fade-in-section ${isVisible ? 'is-visible' : ''}`}
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-dark mb-4">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-mono-950 mb-4 tracking-tight">
             Our Auto Electrical Services
           </h2>
-          <p className="text-slate-600 max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="text-mono-600 max-w-3xl mx-auto text-lg leading-relaxed">
             Professional mobile auto electrician services across Johannesburg and Gauteng.
             We diagnose and fix car electrical faults on-site — no towing needed.
           </p>
@@ -72,25 +72,25 @@ export default function ServicesSection() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow p-6 border border-slate-100 flex flex-col"
+              className="bg-white rounded-2xl p-8 border border-mono-200 hover:border-mono-400 transition-colors flex flex-col group"
             >
               {/* Icon */}
-              <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center mb-4">
-                <service.icon className="w-6 h-6 text-brand" />
+              <div className="w-12 h-12 rounded-full bg-mono-50 border border-mono-150 flex items-center justify-center mb-6">
+                <service.icon className="w-6 h-6 text-mono-950" />
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-bold text-dark mb-2">{service.title}</h3>
+              <h3 className="font-display text-xl font-bold text-mono-950 mb-3 tracking-tight">{service.title}</h3>
 
               {/* Description */}
-              <p className="text-slate-600 text-sm leading-relaxed flex-1 mb-4">
+              <p className="text-mono-600 text-base leading-relaxed flex-1 mb-6">
                 {service.description}
               </p>
 
               {/* CTA Link */}
               <a
                 href="tel:+27683510676"
-                className="inline-flex items-center gap-1 text-brand font-semibold text-sm hover:text-brand-dark transition-colors group"
+                className="inline-flex items-center gap-2 text-mono-950 font-bold text-sm hover:text-mono-600 transition-colors"
               >
                 Call for this service
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

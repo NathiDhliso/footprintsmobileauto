@@ -1,84 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth scrolling */
+/* ── Base ── */
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: #3a3a3a;
+  background: #ffffff;
+}
+
 /* Scroll offset for fixed header */
 [id] {
   scroll-margin-top: 80px;
 }
-
 @media (max-width: 767px) {
   [id] {
     scroll-margin-top: 64px;
   }
 }
 
-/* Scroll animation */
+/* ── Scroll reveal ── */
 .fade-in-section {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
-
 .fade-in-section.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* CTA pulse ring animation */
-@keyframes pulse-ring {
-  0% {
-    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.5);
-  }
-  70% {
-    box-shadow: 0 0 0 12px rgba(22, 163, 74, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
-  }
+/* ── CTA accent glow (restrained) ── */
+@keyframes accent-glow {
+  0%  { box-shadow: 0 0 0 0 rgba(212, 255, 0, 0.35); }
+  70% { box-shadow: 0 0 0 10px rgba(212, 255, 0, 0); }
+  100%{ box-shadow: 0 0 0 0 rgba(212, 255, 0, 0); }
+}
+.cta-glow {
+  animation: accent-glow 2.5s ease-in-out infinite;
 }
 
-.cta-pulse {
-  animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
-}
-
-/* Lightbox / gallery fade-in */
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes scale-in {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.2s ease-out forwards;
-}
-
-.animate-scale-in {
-  animation: scale-in 0.3s ease-out forwards;
-}
-
-/* Ensure minimum tap target size */
+/* ── Minimum tap target ── */
 .tap-target {
   min-height: 48px;
   min-width: 48px;
 }
 
-/* Mobile bottom bar spacing */
+/* ── Mobile bottom-bar spacing ── */
 @media (max-width: 767px) {
   body {
     padding-bottom: 72px;
   }
 }
+
+/* ── Monochrome image treatment ──
+   To disable: remove the .img-mono class from images, or comment out the rule below. */
+.img-mono {
+  filter: grayscale(75%) contrast(1.05) brightness(1.02);
+  transition: filter 0.4s ease;
+}
+.img-mono:hover {
+  filter: grayscale(30%) contrast(1.08) brightness(1.0);
+}
+
+/* ── Lightbox animations (kept from gallery) ── */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.animate-fade-in { animation: fade-in 0.2s ease-out forwards; }
+.animate-scale-in { animation: scale-in 0.3s ease-out forwards; }
