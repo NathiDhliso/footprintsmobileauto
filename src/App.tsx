@@ -1,32 +1,28 @@
-import { useState } from 'react';
+import StickyCallBar from './components/StickyCallBar';
 import Header from './components/Header';
+import HeroSection from './components/HeroSection';
+import TrustBadges from './components/TrustBadges';
+import ServicesSection from './components/ServicesSection';
+import AreasSection from './components/AreasSection';
+import Testimonials from './components/Testimonials';
+import AboutSection from './components/AboutSection';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import Services from './pages/Services';
-import About from './pages/About';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home');
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <Home />;
-      case 'services':
-        return <Services />;
-      case 'about':
-        return <About />;
-      default:
-        return <Home />;
-    }
-  };
-
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header currentPage={currentPage} onNavigate={setCurrentPage} />
-      <main className="flex-grow">
-        {renderPage()}
+    <div className="min-h-screen flex flex-col bg-white">
+      <StickyCallBar />
+      <Header />
+
+      <main className="flex-1">
+        <HeroSection />
+        <TrustBadges />
+        <ServicesSection />
+        <AreasSection />
+        <Testimonials />
+        <AboutSection />
       </main>
+
       <Footer />
     </div>
   );

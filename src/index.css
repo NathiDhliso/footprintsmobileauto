@@ -1,40 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* For on-scroll animations */
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scroll offset for fixed header */
+[id] {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 767px) {
+  [id] {
+    scroll-margin-top: 64px;
+  }
+}
+
+/* Scroll animation */
 .fade-in-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .fade-in-section.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Hero section custom animations */
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
+/* CTA pulse ring animation */
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(22, 163, 74, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+  }
 }
 
-@keyframes fadeInStep {
-    0%, 100% {
-        opacity: 0.05;
-        transform: scale(0.8);
-    }
-    50% {
-        opacity: 0.2;
-        transform: scale(1.1);
-    }
+.cta-pulse {
+  animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
 }
 
-.animate-float {
-    animation: float 3s ease-in-out infinite;
+/* Lightbox / gallery fade-in */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out forwards;
+}
+
+/* Ensure minimum tap target size */
+.tap-target {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+/* Mobile bottom bar spacing */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 72px;
+  }
 }
