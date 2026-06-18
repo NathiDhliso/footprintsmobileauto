@@ -1,30 +1,25 @@
-import StickyCallBar from './components/StickyCallBar';
-import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import TrustBadges from './components/TrustBadges';
-import ServicesSection from './components/ServicesSection';
-import AreasSection from './components/AreasSection';
-import Testimonials from './components/Testimonials';
-import AboutSection from './components/AboutSection';
-import Footer from './components/Footer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MainLayout from './layouts/MainLayout';
+import HomePage from './pages/HomePage';
+import GautengLandingPage from './pages/GautengLandingPage';
+import ServicesPage from './pages/ServicesPage';
+import AreasPage from './pages/AreasPage';
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
-      <StickyCallBar />
-      <Header />
-
-      <main className="flex-1">
-        <HeroSection />
-        <TrustBadges />
-        <ServicesSection />
-        <AreasSection />
-        <Testimonials />
-        <AboutSection />
-      </main>
-
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/autoelectrician/gauteng" element={<GautengLandingPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/areas" element={<AreasPage />} />
+          
+          {/* Fallback route - optionally we could redirect to Home */}
+          <Route path="*" element={<HomePage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
