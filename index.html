@@ -18,36 +18,19 @@
     <meta name="robots" content="index, follow" />
 
     <!-- Preload Hero Image for faster LCP -->
-    <link rel="preload" as="image" href="/herofp.png" />
+    <link rel="preload" as="image" href="/herofp.webp" type="image/webp" />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.footprintsmobileauto.co.za/" />
+    <!--
+      NOTE: <title>, <meta description>, <link canonical>, and OG/Twitter tags
+      are managed PER-PAGE by react-helmet-async. Do NOT hardcode them here.
+      Defaults are set in HomePage.tsx as the fallback.
+    -->
 
-    <!-- SEO Meta Tags -->
-    <title>Mobile Auto Electrician Johannesburg & Gauteng | Footprints Mobile Auto</title>
-    <meta name="description" content="Expert mobile auto electrician serving Johannesburg, Sandton, Midrand, Randburg & Gauteng. Car diagnostics, battery replacement, starter motor repairs. We come to you across Gauteng!" />
-    <meta name="keywords" content="car electrician near me, mobile auto electrician, auto electrician Johannesburg, car electrician Sandton, mobile vehicle diagnostics, car battery replacement Gauteng, starter motor repair, car wiring repair, call-out auto electrician, on-site car diagnostics, bakkie auto electrician, VW auto electrician, Toyota auto electrician, BMW auto electrician, affordable auto electrician, flat battery assistance, jump-start Johannesburg, alternator repair Gauteng" />
-
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Mobile Auto Electrician Johannesburg & Gauteng | Footprints Mobile Auto" />
-    <meta property="og:description" content="Expert mobile auto electrician serving Johannesburg, Sandton, Midrand, Randburg & Gauteng. We come to you!" />
-    <meta property="og:url" content="https://www.footprintsmobileauto.co.za/" />
-    <meta property="og:image" content="https://www.footprintsmobileauto.co.za/logofp.png" />
-    <meta property="og:site_name" content="Footprints Mobile Auto" />
-    <meta property="og:locale" content="en_ZA" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Mobile Auto Electrician Johannesburg & Gauteng | Footprints Mobile Auto" />
-    <meta name="twitter:description" content="Expert mobile auto electrician serving Johannesburg, Sandton, Midrand, Randburg & Gauteng. We come to you!" />
-    <meta name="twitter:image" content="https://www.footprintsmobileauto.co.za/logofp.png" />
-
-    <!-- Schema.org Structured Data -->
+    <!-- Schema.org Structured Data — AutoRepair (homepage) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "AutoRepair",
       "@id": "https://www.footprintsmobileauto.co.za/#business",
       "name": "Footprints Mobile Auto",
       "description": "Mobile auto electrician providing on-site car electrical repairs and diagnostics across Johannesburg and Gauteng. We come to you!",
@@ -55,10 +38,10 @@
       "telephone": "+27683510676",
       "email": "footprintsmobileauto@gmail.com",
       "image": "https://www.footprintsmobileauto.co.za/logofp.png",
+      "logo": "https://www.footprintsmobileauto.co.za/logofp.png",
       "priceRange": "$$",
       "currenciesAccepted": "ZAR",
       "paymentAccepted": "Cash, EFT",
-      "openingHours": "Mo-Su 08:30-18:00",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "57 Regent St",
@@ -72,6 +55,14 @@
         "latitude": "-26.1796",
         "longitude": "28.0697"
       },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "08:30",
+          "closes": "18:00"
+        }
+      ],
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.8",
@@ -88,6 +79,9 @@
         { "@type": "City", "name": "Edenvale" },
         { "@type": "State", "name": "Gauteng" }
       ],
+      "sameAs": [
+        "https://maps.google.com/?q=57+Regent+St+Yeoville+Johannesburg+2198"
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Auto Electrical Services",
@@ -101,6 +95,72 @@
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Non-Running Car Call-Outs" } }
         ]
       }
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What do I do if my car won't start?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Give us a call on 068 351 0676. We'll ask a few questions to understand the problem, then send our mobile auto electrician to your location in Johannesburg or anywhere in Gauteng."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly can you get to me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We aim to reach you within 60 minutes across Johannesburg, Sandton, Midrand, Randburg, and surrounding areas, depending on traffic and availability."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What vehicle brands do you work on?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We work on all major vehicle brands including Toyota, VW, Ford, BMW, Mercedes-Benz, Hyundai, Isuzu, and more. Cars, bakkies, and light commercial vehicles."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you charge a call-out fee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Call us for a free phone quote on 068 351 0676. We'll give you an honest estimate before we come out."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas do you cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We cover Johannesburg, Sandton, Midrand, Randburg, Roodepoort, Kempton Park, Fourways, Edenvale, and the greater Gauteng area."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a mobile auto electrician cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Costs vary depending on the fault and parts required. We offer a free phone assessment and will give you an honest estimate before dispatching. No hidden fees."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you come out after hours or on weekends?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We operate 7 days a week from 8:30 AM to 6:00 PM, including weekends and public holidays. For after-hours emergencies, send us a WhatsApp and we'll respond first thing."
+          }
+        }
+      ]
     }
     </script>
   </head>

@@ -1,40 +1,68 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Services', href: '#services' },
-  { label: 'Areas', href: '#areas' },
-  { label: 'About', href: '#about' },
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'Areas', href: '/areas' },
+  { label: 'About', href: '/#about' },
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const handleNavClick = () => {
     setMobileMenuOpen(false);
   };
 
+  const handleLinkClick = (href: string) => {
+    handleNavClick();
+    // If it's a hash link on the current page, scroll to the element
+    if (href.startsWith('/#') && location.pathname === '/') {
+      const el = document.getElementById(href.substring(2));
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  const isHashLink = (href: string) => href.includes('#');
+
   return (
     <header className="sticky top-0 z-40 bg-mono-950/95 backdrop-blur-md border-b border-mono-800">
       <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 md:px-8">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+        <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <img src="/logofp.png" alt="Footprints Mobile Auto" className="w-8 h-8 rounded-full img-mono" />
           <span className="text-white font-bold tracking-tight text-lg">Footprints Mobile Auto</span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6 lg:gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-mono-300 hover:text-white transition-colors font-medium text-sm tracking-wide"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            isHashLink(link.href) ? (
+              <Link
+                key={link.href}
+                to={link.href}
+                onClick={() => handleLinkClick(link.href)}
+                className="text-mono-300 hover:text-white transition-colors font-medium text-sm tracking-wide"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={`hover:text-white transition-colors font-medium text-sm tracking-wide ${
+                  location.pathname === link.href ? 'text-white' : 'text-mono-300'
+                }`}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
           <div className="flex items-center gap-3 ml-2">
             <a
               href="tel:+27683510676"
@@ -79,14 +107,14 @@ export default function Header() {
 
           {/* Nav Links */}
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
-              onClick={handleNavClick}
+              to={link.href}
+              onClick={() => handleLinkClick(link.href)}
               className="font-display text-white text-3xl font-bold hover:text-mono-300 transition-colors tracking-tight"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
 
           {/* Divider */}

@@ -62,6 +62,16 @@ const faqs = [
     answer:
       'We cover Johannesburg, Sandton, Midrand, Randburg, Roodepoort, Kempton Park, Fourways, Edenvale, and the greater Gauteng area.',
   },
+  {
+    question: 'How much does a mobile auto electrician cost?',
+    answer:
+      'Costs depend on the fault and parts needed. A simple jump-start or battery replacement is straightforward to quote. More complex electrical faults require on-site diagnosis first. We always give you an honest estimate over the phone before we come out — no hidden fees.',
+  },
+  {
+    question: 'Do you come out after hours or on weekends?',
+    answer:
+      'We operate 7 days a week from 8:30 AM to 6:00 PM, including weekends and public holidays. For after-hours emergencies, send us a WhatsApp and we\'ll respond first thing in the morning.',
+  },
 ];
 
 function FAQItem({ question, answer }: { question: string; answer: React.ReactNode }) {

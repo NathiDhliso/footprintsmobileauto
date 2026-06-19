@@ -2,6 +2,14 @@
   command = "npm run build"
   publish = "dist"
 
+# Redirect non-www to www (SEO: single canonical domain)
+[[redirects]]
+  from = "https://footprintsmobileauto.co.za/*"
+  to = "https://www.footprintsmobileauto.co.za/:splat"
+  status = 301
+  force = true
+
+# SPA catch-all (must be last)
 [[redirects]]
   from = "/*"
   to = "/index.html"

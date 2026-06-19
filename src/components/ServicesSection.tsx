@@ -46,7 +46,7 @@ const services = [
   },
 ];
 
-export default function ServicesSection() {
+export default function ServicesSection({ showHeading = true }: { showHeading?: boolean }) {
   const { ref, isVisible } = useScrollAnimation<HTMLElement>();
 
   return (
@@ -57,15 +57,17 @@ export default function ServicesSection() {
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-mono-950 mb-4 tracking-tight">
-            Our Auto Electrical Services
-          </h2>
-          <p className="text-mono-600 max-w-3xl mx-auto text-lg leading-relaxed">
-            Professional mobile auto electrician services across Johannesburg and Gauteng.
-            We diagnose and fix car electrical faults on-site - no towing needed.
-          </p>
-        </div>
+        {showHeading && (
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="font-display text-3xl md:text-5xl font-bold text-mono-950 mb-4 tracking-tight">
+              Our Auto Electrical Services
+            </h2>
+            <p className="text-mono-600 max-w-3xl mx-auto text-lg leading-relaxed">
+              Professional mobile auto electrician services across Johannesburg and Gauteng.
+              We diagnose and fix car electrical faults on-site - no towing needed.
+            </p>
+          </div>
+        )}
 
         {/* Service Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
