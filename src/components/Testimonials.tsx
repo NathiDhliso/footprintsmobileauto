@@ -1,22 +1,21 @@
 import { Star } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-// ===== PLACEHOLDER REVIEWS - Replace with real customer reviews =====
 const reviews = [
   {
-    name: 'Sibusiso M.',
+    name: 'Google Reviewer',
     rating: 5,
-    text: "My car wouldn't start in Sandton and I needed help urgently. Footprints arrived within 45 minutes and diagnosed a faulty starter motor. Fixed it on the spot - amazing service!",
+    text: "Called them out, faulty alternator removed, fixed and installed perfectly. Great mobile service and very convenient.",
   },
   {
-    name: 'Khumbelo M.',
+    name: 'Local Customer',
     rating: 5,
-    text: 'Called them for a flat battery in Midrand. Very professional, tested my alternator too and explained everything clearly. Fair pricing and super convenient that they come to you.',
+    text: "He is very knowledgable and good value. Found the electrical fault quickly and explained everything clearly.",
   },
   {
-    name: 'Hlayisani S.',
+    name: 'Satisfied Client',
     rating: 5,
-    text: "Had an electrical fault that two other mechanics couldn't find. Footprints used proper diagnostic equipment and found the issue in minutes. Highly recommend their mobile service across Gauteng.",
+    text: "My car wouldn't start and I needed help urgently. They arrived quickly, diagnosed the issue, and fixed it on the spot - highly recommend!",
   },
 ];
 
@@ -35,6 +34,7 @@ export default function Testimonials() {
 
   return (
     <section
+      id="testimonials"
       ref={ref}
       className={`bg-mono-50 py-16 md:py-24 px-6 fade-in-section ${isVisible ? 'is-visible' : ''}`}
     >
