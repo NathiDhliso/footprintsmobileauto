@@ -168,7 +168,7 @@ export default function ServiceLandingTemplate({
       {/* ── Hero Section ── */}
       <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden bg-mono-950">
         <img
-          src="/herofp.png"
+          src="/herofp.webp"
           alt={`${serviceName} in Johannesburg - Footprints Mobile Auto`}
           className="absolute inset-0 w-full h-full object-cover img-mono"
         />
